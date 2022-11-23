@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Basic React App</title>
+    </head>
+    <body>
+
+        <!-- this is the container that displays React stuff -->
+        <div id="root">
+
+        </div>
+
+        <!-- Include the React Library (development version) -->
+        <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+
+        <!-- Include the React Dom Library -->
+        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+        <!-- Enables us to use JSX templating language -->
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+        <script type="text/babel">
+
+            // React component (function with a capitalized name)
+            function App(props) {
+                // return JSX
+                return (
+                    <div className="App">
+                        Hello from App component
+
+                        <Welcome name="Eric" age="40" />
+                        <Welcome name="John" age="40" />
+                    </div>
+                )
+            }
+
+            function Welcome(props) {
+                return (
+                    <div className="Welcome">
+                        <h1>Hello from the Welcome component, hi {props.name}</h1>
+                    </div>
+                )
+            }
+
+
+            const reactAppContainer = document.getElementById("root");
+            const root = ReactDOM.createRoot(reactAppContainer);
+
+            // root.render(
+            //     <div className="myClass">
+            //         <h1>Hello world! {1+1}</h1>
+            //         <h2>asdf</h2>
+            //     </div>
+            // );
+
+            root.render( <App /> );
+        
+        </script>
+    </body>
+</html>
